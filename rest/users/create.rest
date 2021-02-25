@@ -1,10 +1,20 @@
+@user_id = 89934c68-4cc4-4afb-8873-118deaa8a730
+###
 POST http://localhost:4000/api/users
 Content-Type: application/json
 
 {
-  "name": "Pedro",
+  "name": "Pedro3",
   "age": 38,
   "email": "pedro@seal.works",
   "password": "123456",
   "nickname": "nennogabriel"
+}
+
+###
+POST http://localhost:4000/api/accounts/{{user_id}}/deposit/
+Content-Type: application/json
+
+{
+  "value": "30"
 }
