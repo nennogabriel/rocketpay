@@ -1,20 +1,40 @@
-@user_id = 89934c68-4cc4-4afb-8873-118deaa8a730
+@account_id = 75bfc310-ad4d-4e45-a71d-7b8623ea4d51
+@from_id = 79e8529c-7d78-408c-a2d1-0b8da4dffe6c
+@to_id = a84962bc-b907-4a1c-9912-f6320cdfab0b
 ###
 POST http://localhost:4000/api/users
 Content-Type: application/json
 
 {
-  "name": "Pedro3",
+  "name": "Pedro",
   "age": 38,
-  "email": "pedro@seal.works",
+  "email": "pedro2@seal.works",
   "password": "123456",
-  "nickname": "nennogabriel"
+  "nickname": "nennogabriel2"
 }
 
-###
-POST http://localhost:4000/api/accounts/{{user_id}}/deposit/
+### 
+POST http://localhost:4000/api/accounts/{{account_id}}/deposit/
 Content-Type: application/json
 
 {
-  "value": "30"
+  "value": "50"
+}
+
+### 
+POST http://localhost:4000/api/accounts/{{account_id}}/withdraw/
+Content-Type: application/json
+
+{
+  "value": "50"
+}
+
+### 
+POST http://localhost:4000/api/accounts/transaction/
+Content-Type: application/json
+
+{
+  "from": "{{account_id}}",
+  "to": "{{account_id}}",
+  "value": "50"
 }
